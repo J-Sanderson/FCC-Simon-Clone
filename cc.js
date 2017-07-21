@@ -5,6 +5,13 @@ var interval;
 var userPos;
 var strictMode = false;
 
+//initiate game
+function startGame() {
+  sequence = generateSequence();
+  currentRound = 1;
+  play();
+}
+
 //generate full sequence
 function generateSequence() {
   var seq = [];
@@ -41,12 +48,14 @@ function play() {
     interval = 500;
   }
   
+  //reset number of user clicks this round
   userPos = 0;
 
-  //break if reached limit
+  //win condition if limit reached
   if (currentRound > MAX_STEPS) {
-    console.log("You win!");
-    return; //and do some other stuff as well
+    $('.but').animate({ backgroundPositionX: 301 }, 0);
+    $('#popup').append("<p>You won!<p><button id='startagain'>Another round?</button>").show();
+    return;
   }
 
   //display current round
@@ -81,20 +90,24 @@ $(".but").click(function() {
         userPos++;
         //is the round done?
         if (userPos >= currentRound) {
-          currentRound++;
-          play();
+          //delay so the new round is distinguishable from user click
+          setTimeout(function() {
+            currentRound++;
+            play();
+          }, interval);
         } else {
           //add active class again for next click
           $(".but").addClass("active");
         }
       }, interval);
-    } else { //incorrect click
+    } else {
+      //incorrect click
       //allow time for user's click to display
       setTimeout(function() {
         //need to handle strict mode
-        if (strictMode ) {
+        if (strictMode) {
           //fail message
-          console.log('You lose!');
+          $('#popup').append("<p>You lose!<p><button id='startagain'>Try again?</button>").show();
           $("#count").empty().append(0);
           //end game - more later
           return;
@@ -122,27 +135,32 @@ function lightSwitch(light, who, pos) {
   }, secondDelay);
 } //end of light switch function
 
+  //start again after win
+  $("#startagain").click(function() {
+    $('#popup').hide().empty();
+    startGame();
+  })
+
 $("document").ready(function() {
+  
+  //start button
   $("#start").click(function() {
-    sequence = generateSequence();
-    currentRound = 1;
-    play();
+    startGame();
+  });
+  
+  //reset button
+  $("#reset").click(function() {
+    startGame();
   });
 
   //toggle strict mode
-  $('#stricton').change(function() {
-    if ($(this).is(':checked')) {
+  $("#stricton").change(function() {
+    if ($(this).is(":checked")) {
       strictMode = true;
     } else {
       strictMode = false;
     }
   });
-  
-  //reset button
-  $('#reset').click(function() {
-    sequence = generateSequence();
-    currentRound = 1;
-    play();
-  })
+
   
 });

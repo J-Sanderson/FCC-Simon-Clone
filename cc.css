@@ -1,20 +1,41 @@
 /*min 683 px*/
 
+html, body {
+  width:100%;
+  height:100%;
+}
+
+body {
+  font-family:Arial, Helvetica, sans-serif;
+}
+
 h1 {
   text-align:center;
+  font-family: 'Knewave', cursive;
+  color:#879CE3;
 }
+
+button {
+  border:0px;
+  border-radius:10px;
+  cursor:pointer;
+  font-family: 'Knewave', cursive;
+}
+
+/*game lights*/
 
 .but {
   width:299px;
   height:150px;
   border-radius:50%;
+  background-position: 0 0;
 }
 
 .active {
   cursor:pointer;
 }
 
-#middle {
+#middle { /*container for middle lights*/
   height:150px;
   width:624px;
   margin-left:auto;
@@ -25,51 +46,83 @@ h1 {
   margin-left:auto;
   margin-right:auto;
   background-image:url('red.png');
-  background-position: 0 0;
 }
 
 #blue {
   float:left;
   margin-right:10px;
   background-image:url('blue.png');
-  background-position: 0 0;
 }
 
 #green {
   float:left;
   margin-left:10px;
   background-image:url('green.png');
-  background-position: 0 0;
 }
 
 #yellow {
   margin-left:auto;
   margin-right:auto;
   background-image:url('yellow.png');
-  background-position: 0 0;
 }
 
+/*controls and status*/
 
 #controls {
   margin-top:20px;
   text-align:center;
 }
 
-#count {
-  border:1px solid black;
-  padding:10px;
+#start {
+  background-color:#879CE3;
+  background-image:url('paw.png');
+  height:50px;
+  width:150px;
+  background-repeat:no-repeat;
+  background-position:right center;
+  font-size:170%;
+  text-align:left;
+  padding-left:15px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#strictmode {
   display:inline;
 }
 
+#count {
+  background-image:url('counter.png');
+  width:150px;
+  height:150px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:10px;
+  line-height:210px;
+  font-size:200%;
+}
+
+#counts {
+  background-color:white;
+  padding:0px 5px;
+}
+
+#reset {
+  display:inline;
+}
+
+/*messages*/
+
 #popup {
   display:none;
-  border:1px solid black;
-  background-color:white;
+  background-color:#879CE3;
   text-align:center;
   position:fixed;
-  width:60%;
+  width:40%;
   left: 50%;
-  margin-left: -30%;
+  margin-left: -20%; /*half the width - to centre */
   z-index:10;
   padding: 0px 10px;
+  border-radius:30px;
 }

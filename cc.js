@@ -7,6 +7,7 @@ var strictMode = false;
 
 //initiate game
 function startGame() {
+  $('#popup').hide().empty();
   sequence = generateSequence();
   currentRound = 1;
   play();
@@ -54,12 +55,12 @@ function play() {
   //win condition if limit reached
   if (currentRound > MAX_STEPS) {
     $('.but').animate({ backgroundPositionX: 301 }, 0);
-    $('#popup').append("<p>You won!<p><button id='startagain'>Another round?</button>").show();
+    $('#popup').append("<p>You won!<p><button class='startagain'>Another round?</button>").show();
     return;
   }
 
   //display current round
-  $("#count").empty().append(currentRound);
+  $("#counts").empty().append(currentRound);
 
   //display sequence
   for (var i = 0; i < currentRound; i++) {
@@ -107,8 +108,8 @@ $(".but").click(function() {
         //need to handle strict mode
         if (strictMode) {
           //fail message
-          $('#popup').append("<p>You lose!<p><button id='startagain'>Try again?</button>").show();
-          $("#count").empty().append(0);
+          $('#popup').append("<p>You lose!<p><button class='startagain'>Try again?</button>").show();
+          $("#counts").empty().append(0);
           //end game - more later
           return;
         }
@@ -135,11 +136,6 @@ function lightSwitch(light, who, pos) {
   }, secondDelay);
 } //end of light switch function
 
-  //start again after win
-  $("#startagain").click(function() {
-    $('#popup').hide().empty();
-    startGame();
-  })
 
 $("document").ready(function() {
   
@@ -152,6 +148,12 @@ $("document").ready(function() {
   $("#reset").click(function() {
     startGame();
   });
+  
+    //start again after win
+  $("#startagain").click(function() {
+    $('#popup').hide().empty();
+    startGame();
+  })
 
   //toggle strict mode
   $("#stricton").change(function() {

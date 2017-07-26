@@ -1,18 +1,31 @@
-/*min 683 px*/
-
-html, body {
-  width:100%;
-  height:100%;
-}
-
 body {
   font-family:Arial, Helvetica, sans-serif;
+  background-color:#E3E9FD;
+  color:#171A25;
+  margin:0px;
+}
+
+#top {
+  background-color:#171A25;
+  width:100%;
+  margin-bottom:20px;
+  padding:20px 0px;
+  text-align:center;
+}
+
+#top img {
+  display:inline;
 }
 
 h1 {
-  text-align:center;
   font-family: 'Knewave', cursive;
   color:#879CE3;
+  margin-top:0px;
+  display:inline;
+}
+
+h2 {
+  font-family: 'Knewave', cursive;
 }
 
 button {
@@ -29,6 +42,7 @@ button {
   height:150px;
   border-radius:50%;
   background-position: 0 0;
+  border:4px solid #000000;
 }
 
 .active {
@@ -37,7 +51,7 @@ button {
 
 #middle { /*container for middle lights*/
   height:150px;
-  width:624px;
+  width:634px;
   margin-left:auto;
   margin-right:auto;
 }
@@ -45,25 +59,26 @@ button {
 #red {
   margin-left:auto;
   margin-right:auto;
-  background-image:url('red.png');
+  margin-top:20px;
+  background-image:url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/red.png');
 }
 
 #blue {
   float:left;
   margin-right:10px;
-  background-image:url('blue.png');
+  background-image:url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/blue.png');
 }
 
 #green {
   float:left;
   margin-left:10px;
-  background-image:url('green.png');
+  background-image:url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/green.png');
 }
 
 #yellow {
   margin-left:auto;
   margin-right:auto;
-  background-image:url('yellow.png');
+  background-image:url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/yellow.png');
 }
 
 /*controls and status*/
@@ -75,7 +90,7 @@ button {
 
 #start {
   background-color:#879CE3;
-  background-image:url('paw.png');
+  background-image:url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/paw.png');
   height:50px;
   width:150px;
   background-repeat:no-repeat;
@@ -89,32 +104,58 @@ button {
 }
 
 #strictmode {
+  font-family: 'Knewave', cursive;
+}
+
+#controls {
+  border:1px solid black;
+  width:70%;
+  height:170px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#conleft, #conright {
+  background-image:url('http://placekitten.com/150/150');
   display:inline;
+  float:left;
+  border:1px solid black;
+  width:33%;
+  height:150px;
+  background-repeat:no-repeat;
+  background-position:center center;
+  line-height:150px;
 }
 
 #count {
-  background-image:url('counter.png');
-  width:150px;
+  background-image:url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/counter.png');
+  background-repeat:no-repeat;
+  background-position:center center;
+  width:32%;
   height:150px;
   margin-left:auto;
   margin-right:auto;
   margin-top:10px;
   line-height:210px;
-  font-size:200%;
+  font-size:170%;
+  display:inline;
+  float:left;
+  border:1px solid black;
 }
 
 #counts {
   background-color:white;
   padding:0px 5px;
+  font-family: 'Knewave', cursive;
 }
 
 #reset {
-  display:inline;
+  font-size:140%;
 }
 
 /*messages*/
 
-#popup {
+#popup, #about {
   display:none;
   background-color:#879CE3;
   text-align:center;
@@ -125,4 +166,51 @@ button {
   z-index:10;
   padding: 0px 10px;
   border-radius:30px;
+  margin-top:140px;
+}
+
+#startagain {
+  margin-bottom:20px;
+  font-size:170%;
+  padding:5px 10px;
+  background-color:#E3E9FD;
+}
+
+#aboutbut {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  background-color:#879CE3;
+  font-size:120%;
+}
+
+#aboutclose {
+  margin-bottom:20px;
+  background-color:#E3E9FD;
+}
+
+@media screen and (max-width: 700px) {
+  
+  .but {
+    margin-top:10px;
+  }
+  
+  #blue, #green {
+    float:none;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  
+  #middle {
+    height:325px;
+    width:100%;
+  }
+  
+  #popup, #about {
+  width:80%;
+  left: 50%;
+  margin-left: -40%; /*half the width - to centre */
+}
+ 
+  
 }

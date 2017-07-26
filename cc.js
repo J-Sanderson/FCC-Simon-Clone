@@ -55,7 +55,9 @@ $("document").ready(function() {
     //win condition if limit reached
     if (currentRound > MAX_STEPS) {
       $(".but").animate({ backgroundPositionX: 301 }, 0);
-      $("#popmess").append("<p>You won!<p>");
+      $("#popmess").append(
+        "You win!<br><br><img src='http://placekitten.com/150/150'>"
+      );
       $("#popup").show();
       return;
     }
@@ -106,13 +108,13 @@ $("document").ready(function() {
         //incorrect click
         //allow time for user's click to display
         setTimeout(function() {
-          //need to handle strict mode
           if (strictMode) {
             //fail message
-            $("#popmess").append("<p>You lose!<p>");
+            $("#popmess").append(
+              "You lose!<br><br><img src='http://placekitten.com/150/150'>"
+            );
             $("#popup").show();
             $("#counts").empty().append(0);
-
             //end game
             return;
           }
@@ -162,5 +164,15 @@ $("document").ready(function() {
     } else {
       strictMode = false;
     }
+  });
+
+  //display about box
+  $("#aboutbut").click(function() {
+    $("#about").show();
+  });
+
+  //hide about box
+  $("#aboutclose").click(function() {
+    $("#about").hide();
   });
 });

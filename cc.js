@@ -8,6 +8,7 @@ $("document").ready(function() {
 
   //initiate game
   function startGame() {
+    $(".but").animate({ backgroundPositionX: 0 }, 0);
     sequence = generateSequence();
     currentRound = 1;
     play();
@@ -56,7 +57,7 @@ $("document").ready(function() {
     if (currentRound > MAX_STEPS) {
       $(".but").animate({ backgroundPositionX: 301 }, 0);
       $("#popmess").append(
-        "You win!<br><br><img src='http://placekitten.com/150/150'>"
+        "You win!<br><br><img src='https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/win.png'>"
       );
       $("#popup").show();
       return;
@@ -111,7 +112,7 @@ $("document").ready(function() {
           if (strictMode) {
             //fail message
             $("#popmess").append(
-              "You lose!<br><br><img src='http://placekitten.com/150/150'>"
+              "You lose!<br><br><img src='https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/lose.png'>"
             );
             $("#popup").show();
             $("#counts").empty().append(0);
@@ -153,7 +154,7 @@ $("document").ready(function() {
   });
 
   //reset button
-  $("#reset").click(function() {
+  $("#reset").click(function() { //maybe needs a delay?
     startGame();
   });
 

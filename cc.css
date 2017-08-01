@@ -1,27 +1,33 @@
 body {
-  font-family:Arial, Helvetica, sans-serif;
-  background-color:#E3E9FD;
-  color:#171A25;
-  margin:0px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #E3E9FD;
+  color: #171A25;
+  margin: 0px;
 }
 
 #top {
-  background-color:#171A25;
-  width:100%;
-  margin-bottom:20px;
-  padding:20px 0px;
-  text-align:center;
+  background-color: #171A25;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px 0px;
+  text-align: center;
 }
 
 #top img {
-  display:inline;
+  display: inline;
+}
+
+a:link, a:visited {
+  color: #E3E9FD;
+  text-decoration:none;
+  border-bottom: 1px #E3E9FD dotted;
 }
 
 h1 {
   font-family: 'Knewave', cursive;
-  color:#879CE3;
-  margin-top:0px;
-  display:inline;
+  color: #879CE3;
+  margin-top: 0px;
+  display: inline;
 }
 
 h2 {
@@ -29,188 +35,258 @@ h2 {
 }
 
 button {
-  border:0px;
-  border-radius:10px;
-  cursor:pointer;
+  border: 0px;
+  border-radius: 10px;
+  cursor: pointer;
   font-family: 'Knewave', cursive;
+  background-color: #E3E9FD;
+  color: #171A25;
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
 }
 
 /*game lights*/
 
 .but {
-  width:299px;
-  height:150px;
-  border-radius:50%;
-  background-position: 0 0;
-  border:4px solid #000000;
+  width: 299px;
+  height: 150px;
+  border-radius: 50%;
+  background-position: 0% 0%;
+  border: 4px solid #000000;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .active {
-  cursor:pointer;
+  cursor: pointer;
 }
 
-#middle { /*container for middle lights*/
-  height:150px;
-  width:634px;
-  margin-left:auto;
-  margin-right:auto;
+#middle {
+  /*container for middle lights*/
+  height: 150px;
+  width: 634px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #red {
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:20px;
-  background-image:url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/red.png');
+  margin-top: 20px;
+  background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/red.png');
 }
 
 #blue {
-  float:left;
-  margin-right:10px;
-  background-image:url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/blue.png');
+  float: left;
+  margin-right: 10px;
+  background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/blue.png');
 }
 
 #green {
-  float:left;
-  margin-left:10px;
-  background-image:url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/green.png');
+  float: left;
+  margin-left: 10px;
+  background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/green.png');
 }
 
 #yellow {
-  margin-left:auto;
-  margin-right:auto;
-  background-image:url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/yellow.png');
+  background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/yellow.png');
 }
 
 /*controls and status*/
 
-#controls {
-  margin-top:20px;
-  text-align:center;
+#start { /*start button*/
+  background-color: #879CE3;
+  background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/paw.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  height: 50px;
+  width: 150px;
+  font-size: 170%;
+  text-align: left;
+  padding-left: 15px;
 }
 
-#start {
-  background-color:#879CE3;
-  background-image:url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/paw.png');
-  height:50px;
-  width:150px;
-  background-repeat:no-repeat;
-  background-position:right center;
-  font-size:170%;
-  text-align:left;
-  padding-left:15px;
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
+#controls { /*container for controls*/
+  margin-top: 10px;
+  text-align: center;
+  width: 634px;
+  height: 160px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #strictmode {
   font-family: 'Knewave', cursive;
+  font-size: 160%;
+  margin-right:27px;
+  text-shadow: -1px -1px 0px #E3E9FD, 1px 1px 0px #E3E9FD, 1px -1px 0px #E3E9FD, -1px 1px 0px #E3E9FD;
 }
 
-#controls {
-  border:1px solid black;
-  width:70%;
-  height:170px;
-  margin-left:auto;
-  margin-right:auto;
+#conleft, #conright, #count {
+  display: inline;
+  float: left;
+  width: 33%;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  line-height: 150px;
 }
 
-#conleft, #conright {
-  background-image:url('http://placekitten.com/150/150');
-  display:inline;
-  float:left;
-  border:1px solid black;
-  width:33%;
-  height:150px;
-  background-repeat:no-repeat;
-  background-position:center center;
-  line-height:150px;
+#conleft {
+  background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/strict.png');
 }
 
 #count {
-  background-image:url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/counter.png');
-  background-repeat:no-repeat;
-  background-position:center center;
-  width:32%;
-  height:150px;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:10px;
-  line-height:210px;
-  font-size:170%;
-  display:inline;
-  float:left;
-  border:1px solid black;
+  background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/counter.png');
+  width: 32%;
+  line-height: 210px;
+  font-size: 170%;
 }
 
 #counts {
-  background-color:white;
-  padding:0px 5px;
+  background-color: white;
+  padding: 0px 5px;
   font-family: 'Knewave', cursive;
 }
 
+#conright {
+  background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/reset.png');
+}
+
 #reset {
-  font-size:140%;
+  font-size: 160%;
+  margin-top:60px;
+  margin-left:57px;
+  background-color:transparent;
+  text-shadow: -1px -1px 0px #E3E9FD, 1px 1px 0px #E3E9FD, 1px -1px 0px #E3E9FD, -1px 1px 0px #E3E9FD;
 }
 
 /*messages*/
 
 #popup, #about {
-  display:none;
-  background-color:#879CE3;
-  text-align:center;
-  position:fixed;
-  width:40%;
+  display: none;
+  background-color: #879CE3;
+  text-align: center;
+  position: fixed;
+  width: 40%;
   left: 50%;
   margin-left: -20%; /*half the width - to centre */
-  z-index:10;
+  z-index: 10;
   padding: 0px 10px;
-  border-radius:30px;
-  margin-top:140px;
+  border-radius: 30px;
+  margin-top: 140px;
+}
+
+#about img {
+  border:4px solid #171A25;
 }
 
 #startagain {
-  margin-bottom:20px;
-  font-size:170%;
-  padding:5px 10px;
-  background-color:#E3E9FD;
+  margin-bottom: 20px;
+  font-size: 170%;
+  padding: 5px 10px;
+  background-color: #E3E9FD;
 }
 
 #aboutbut {
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-  background-color:#879CE3;
-  font-size:120%;
+  background-color: #879CE3;
+  font-size: 120%;
+  margin-bottom:20px;
 }
 
 #aboutclose {
-  margin-bottom:20px;
-  background-color:#E3E9FD;
+  margin-bottom: 20px;
+  background-color: #E3E9FD;
+  font-size: 120%;
 }
 
 @media screen and (max-width: 700px) {
-  
+  #top img, h1 {
+    display: none;
+  }
+
+  #top {
+    padding: 3px 0px 10px 0px;
+    margin-bottom:5px;
+  }
+
   .but {
-    margin-top:10px;
+    margin-top: 5px;
+    height: 70px;
+    width:190px;
+    background-position: 0% 33%;
+  }
+
+  #red {
+    margin-top: 5px;
+    background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/red_small.png');
+  }
+
+  #blue, #green {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
   }
   
-  #blue, #green {
-    float:none;
+  #blue {
+    background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/blue_small.png');
+  }
+  
+  #green {
+    background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/green_small.png');
+  }
+  
+  #yellow {
+    background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/yellow_small.png');
+  }
+
+  #middle {
+    height: 160px;
+    width: 100%;
+  }
+  
+  #start {
+    background-image:none;
+    text-align:center;
+    padding:5px;
+    font-size: 120%;
+    height:auto;
+    width:auto;
+  }
+  
+  #controls {
+    width: 100%;
+    height:470px;
+    height:40px;
+    margin-bottom:10px;
+  }
+  
+  #strictmode {
+    font-size: 140%;
+    margin-right:0px;
+  }
+  
+  #conleft, #conright, #count {
+    background-image:none;
+    height:40px;
+    line-height: normal;
+    text-align:center;
+  }
+  
+  #counts {
+    background-color: transparent;
+  }
+  
+  #reset {
+    font-size: 140%;
+    margin-top:0px;
     margin-left:auto;
     margin-right:auto;
   }
   
-  #middle {
-    height:325px;
-    width:100%;
-  }
-  
   #popup, #about {
-  width:80%;
-  left: 50%;
-  margin-left: -40%; /*half the width - to centre */
-}
- 
-  
+    width: 80%;
+    left: 50%;
+    margin-left: -40%; /*half the width - to centre */
+    margin-top: 40px;
+  }
 }

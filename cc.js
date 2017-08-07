@@ -5,6 +5,16 @@ $("document").ready(function() {
   var interval;
   var userPos;
   var strictMode = false;
+  
+  var sounds = {
+    "red": new Audio("red.wav"),
+    "yellow": new Audio("yellow.wav"),
+    "blue": new Audio("blue.wav"),
+    "green": new Audio("green.wav"),
+    "mistake": new Audio("lose.wav"),
+    "fail": new Audio("losestrict.wav"),
+    "win": new Audio("win.wav")
+  }
 
   //initiate game
   function startGame() {
@@ -34,7 +44,6 @@ $("document").ready(function() {
           break;
       }
     }
-    console.log("generated sequence: " + seq);
     return seq;
   }
 
@@ -55,9 +64,10 @@ $("document").ready(function() {
 
     //win condition if limit reached
     if (currentRound > MAX_STEPS) {
+      sounds.win.play();
       $(".but").animate({ backgroundPositionX: 301 }, 0);
       $("#popmess").append(
-        "You win!<br><br><img src='https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/win.png'>"
+        "You win!<br><br><img src='win.png'>"
       );
       $("#popup").show();
       return;
@@ -111,17 +121,23 @@ $("document").ready(function() {
         setTimeout(function() {
           if (strictMode) {
             //fail message
+            sounds.fail.play();
             $("#popmess").append(
-              "You lose!<br><br><img src='https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/lose.png'>"
+              "You lose!<br><br><img src='lose.png'>"
             );
             $("#popup").show();
             $("#counts").empty().append(0);
             //end game
             return;
+          } else {
+            //mistake sound
+            sounds.mistake.play();
+            //delay to allow sound to play without overlap
+            setTimeout(function() {
+              //return to play() on same round
+              play();
+            }, 1000);
           }
-          //show 'wrong' message somewhere
-          //return to play() on same round
-          play();
         }, interval);
       }
     }
@@ -141,6 +157,7 @@ $("document").ready(function() {
     //switch on
     setTimeout(function() {
       $("#" + light).animate({ backgroundPositionX: 301 }, 0);
+      sounds[light].play();
     }, firstDelay);
     //switch off
     setTimeout(function() {

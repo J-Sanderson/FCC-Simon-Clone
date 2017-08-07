@@ -72,30 +72,30 @@ button {
 
 #red {
   margin-top: 20px;
-  background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/red.png');
+  background-image: url('red.png');
 }
 
 #blue {
   float: left;
   margin-right: 10px;
-  background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/blue.png');
+  background-image: url('blue.png');
 }
 
 #green {
   float: left;
   margin-left: 10px;
-  background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/green.png');
+  background-image: url('green.png');
 }
 
 #yellow {
-  background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/yellow.png');
+  background-image: url('yellow.png');
 }
 
 /*controls and status*/
 
 #start { /*start button*/
   background-color: #879CE3;
-  background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/paw.png');
+  background-image: url('paw.png');
   background-repeat: no-repeat;
   background-position: right center;
   height: 50px;
@@ -132,11 +132,11 @@ button {
 }
 
 #conleft {
-  background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/strict.png');
+  background-image: url('strict.png');
 }
 
 #count {
-  background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/counter.png');
+  background-image: url('counter.png');
   width: 32%;
   line-height: 210px;
   font-size: 170%;
@@ -149,7 +149,7 @@ button {
 }
 
 #conright {
-  background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/reset.png');
+  background-image: url('reset.png');
 }
 
 #reset {
@@ -218,7 +218,7 @@ button {
 
   #red {
     margin-top: 5px;
-    background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/red_small.png');
+    background-image: url('red_small.png');
   }
 
   #blue, #green {
@@ -228,15 +228,15 @@ button {
   }
   
   #blue {
-    background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/blue_small.png');
+    background-image: url('blue_small.png');
   }
   
   #green {
-    background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/green_small.png');
+    background-image: url('green_small.png');
   }
   
   #yellow {
-    background-image: url('https://raw.githubusercontent.com/J-Sanderson/FCC-Simon-Clone/master/yellow_small.png');
+    background-image: url('yellow_small.png');
   }
 
   #middle {
